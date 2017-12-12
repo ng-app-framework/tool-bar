@@ -1,0 +1,11 @@
+<div class="tool-bar-menu" #top [hidden]="!isTopVisible()">
+    <ng-content select="div.tb-menu"></ng-content>
+</div>
+<div class="tool-bar-content">
+    <div class="tb-content-container">
+        <ng-content select="div.tb-content"></ng-content>
+    </div>
+</div>
+<div class="tool-bar-menu" #bottom [hidden]="!isBottomVisible()">
+    <ng-content select="div.tb-menu-bottom"></ng-content>
+</div>

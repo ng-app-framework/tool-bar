@@ -1,0 +1,205 @@
+.tool-bar, .tool-bar.inline-tool-bar {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    transition: left 0.5s;
+    div {
+        position: relative;
+    }
+    .tool-bar-menu {
+        background-color: #efefef;
+        .nav-item.align-right {
+            margin-left: auto;
+            text-align: right;
+        }
+        .nav-link {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link.active {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+        a.nav-link:hover {
+            background-color: #ffffff;
+        }
+        .menu-bar {
+            .nav-item {
+                white-space: nowrap;
+                border-bottom: 1px solid #cccccc;
+                .nav-link {
+                    height: 100%;
+                }
+                h1, h2, h3, h4 {
+                    border-bottom: none;
+                    font-weight: bold;
+                    font-size: 1em;
+                    margin-bottom: 0;
+                    line-height: 1.5;
+                }
+            }
+            .nav-item:first-child {
+                border-left: none;
+            }
+            .nav-item .disabled:hover {
+                background-color: transparent;
+                color: #777777;
+            }
+            .nav-link {
+                border-radius: 0;
+            }
+        }
+        .disabled {
+            color: #ccc;
+            .fa, span, .themed-color {
+                color: #ccc;
+            }
+        }
+    }
+
+    .tool-bar-content {
+        min-height: 50%;
+        flex-basis: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        @media(min-height: 400px) {
+            overflow-y: auto;
+        }
+        .tb-content-container {
+            height: 100%;
+            > .tb-content {
+                height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+                > div[table] {
+                    height:100%;
+                }
+            }
+        }
+    }
+    .dropdown .fa {
+        width: 20px;
+        text-align: center;
+    }
+
+}
+
+.tool-bar:not(.inline-tool-bar),
+.tool-bar.inline-tool-bar > .tool-bar-content > .tb-content-container > .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.tool-bar.inline-tool-bar > .tool-bar-content {
+    overflow: visible;
+    position: relative;
+}
+
+.tool-bar-menu > .tb-menu-bottom {
+    max-height: 50%;
+    > .tool-bar.inline-tool-bar {
+        overflow: auto;
+    }
+}
+
+.tool-bar {
+    .grey-background {
+        background-color: #efefef;
+        .active {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+        a.nav-link:hover {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+    }
+    .white-background {
+        background-color: #ffffff;
+        .active {
+            background-color: #efefef;
+            border-bottom: 1px solid #efefef;
+        }
+        a.nav-link:hover {
+            background-color: #efefef;
+            border-bottom: 1px solid #efefef;
+        }
+    }
+    .tool-bar-menu {
+        h1, h2, h3 {
+            margin-bottom: 0;
+        }
+        .align-middle {
+            display: table;
+            margin: auto;
+            span {
+                display: table-cell;
+                padding: 2px;
+                vertical-align: middle;
+            }
+        }
+        .nav-link {
+            text-align: center;
+            h1, h2, h3 {
+                text-align: left;
+            }
+            .fa {
+                font-size: 1.5em;
+            }
+            .fa-label {
+                display: block;
+                width: 100%;
+                font-size: 0.8em;
+                margin-bottom: -5px;
+                @media (max-width: 900px) {
+                    font-size: 0.6em;
+                }
+                @media (max-width: 400px) {
+                    display: none;
+                }
+            }
+
+        }
+        @media (max-width: 900px) {
+            .nav-item {
+                flex-grow: 1;
+            }
+        }
+
+    }
+    .tb-menu-bottom {
+        border-top: 1px solid #aaa;
+    }
+}
+
+.tool-bar .tool-bar-content .tb-content-container {
+    .fullscreen {
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        height: auto;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        .hide-unless-fullscreen {
+            display: block;
+        }
+        @media(max-width: 700px) {
+            top: 0;
+        }
+    }
+    .hide-unless-fullscreen {
+        display: none;
+    }
+}
+
+@media(min-width: 700px) {
+    .sidebar-open .tool-bar .tool-bar-content .tb-content-container .fullscreen {
+        left: 250px;
+    }
+}
