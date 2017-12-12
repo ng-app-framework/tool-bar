@@ -21,7 +21,7 @@
   "dependencies": {
     "@angular/common": "^5.1.0",
     "@angular/core": "^5.1.0",
-    "@ng-app-framework/core": "^1.0.5",
+    "@ng-app-framework/core": "^1.1.0",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "popper.js": "^1.13.0",
