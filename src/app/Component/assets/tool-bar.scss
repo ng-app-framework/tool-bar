@@ -110,24 +110,29 @@
 .tool-bar {
     .grey-background {
         background-color: #efefef;
-        .active {
-            background-color: #ffffff;
-            border-bottom: 1px solid #ffffff;
-        }
-        a.nav-link:hover {
-            background-color: #ffffff;
-            border-bottom: 1px solid #ffffff;
+        &.tool-bar-menu {
+            .active {
+                background-color: #ffffff;
+                border-bottom: 1px solid #ffffff;
+            }
+            a.nav-link:hover {
+                background-color: #ffffff;
+                border-bottom: 1px solid #ffffff;
+            }
         }
     }
     .white-background {
         background-color: #ffffff;
-        .active {
-            background-color: #efefef;
-            border-bottom: 1px solid #efefef;
-        }
-        a.nav-link:hover {
-            background-color: #efefef;
-            border-bottom: 1px solid #efefef;
+
+        &.tool-bar-menu {
+            .active {
+                background-color: #efefef;
+                border-bottom: 1px solid #efefef;
+            }
+            a.nav-link:hover {
+                background-color: #efefef;
+                border-bottom: 1px solid #efefef;
+            }
         }
     }
     .tool-bar-menu {
